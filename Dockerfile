@@ -1,4 +1,4 @@
-FROM rocker/verse:4.1.2
+FROM rocker/tidyverse:4.1.2
 MAINTAINER Akilesh Ramasamy <akident@gmail.com>
 RUN git clone https://github.com/drakileshr/introR.git  && \
     cd introR/  && \
