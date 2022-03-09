@@ -7,4 +7,6 @@ RUN git clone https://github.com/drakileshr/introR.git  && \
     apt-get install -y libjpeg-dev apt-transport-https gnupg2 curl unixodbc && \
     chmod 777 ./mkusers.sh  && \
     ./mkusers.sh  && \
+    chmod 777 ./eda.R && \
+    ./eda.R && \
     R -e 'devtools::install_deps()' 
