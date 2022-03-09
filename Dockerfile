@@ -1,12 +1,10 @@
-FROM rocker/tidyverse
-MAINTAINER Steph Locke <steph@itsalocke.com>
-RUN git clone https://github.com/lockedata/DOCKER-introR.git  && \
-    cd DOCKER-introR/  && \
-	cp sampleSQL.r /etc/skel/  && \
+FROM rocker/verse:4.1.2
+MAINTAINER Akilesh Ramasamy <akident@gmail.com>
+RUN git clone https://github.com/drakileshr/introR.git  && \
+    cd introR/  && \
+	cp /data/ /etc/skel/data/  && \
     apt-get update && \
     apt-get install -y libjpeg-dev apt-transport-https gnupg2 curl unixodbc && \
     chmod 777 ./mkusers.sh  && \
     ./mkusers.sh  && \
-    chmod 777 ./odbcinstall.sh  && \
-    ./odbcinstall.sh && \
     R -e 'devtools::install_deps()' 
